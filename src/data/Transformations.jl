@@ -64,7 +64,7 @@ function logp1_transform!(adata::AnnData;
         X = adata.X
     end
     
-    adata.layers["logp1_transformed"] = log.(X .+ one(eltype(X)))
+    adata.layers["logp1_transformed"] = log1p.(X)
     return adata
 end 
 
